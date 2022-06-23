@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>IOT project | Dashboard</title>
+	</head>
+
+	<link
+		rel="stylesheet"
+		href="{{url_for('static', filename='css/global.css')}}"
+	/>
+
+	<body>
+		<!-- Navbar -->
+		{% include 'nav.html' %}
+
+		<!-- Body -->
+		<div class="wrapper">
+			<!-- Graph -->
+			<div class="graph-container">
+				<canvas id="graph" width="100" height="60"></canvas>
+			</div>
+
+			<!-- Charts -->
+			<div class="charts-container" id="charts-container">
+				<div class="charts-wrapper">
+					<div class="heading">Air Quality</div>
+					<div
+						class="pie"
+						data-pie='{ 
+						"cut": 30,
+						"percent": 0,
+						"rotation": 144,
+						"colorSlice": "#AADEA7",
+						"colorCircle": "#f1f1f1",
+						"fontSize": "1.2rem",
+						"round": true,
+						"stroke": 5
+					}'
+					></div>
+				</div>
+				<div class="charts-wrapper">
+					<div class="heading">Temperature</div>
+					<div
+						class="pie"
+						data-pie='{ 
+						"cut": 30,
+						"percent": 0,
+						"rotation": 144,
+						"colorSlice": "#AADEA7",
+						"colorCircle": "#f1f1f1",
+						"fontSize": "1.2rem",
+						"round": true,
+						"stroke": 5,
+						"unit": "°C"
+					}'
+					></div>
+				</div>
+				<div class="charts-wrapper">
+					<div class="heading">Humidity</div>
+					<div
+						class="pie"
+						data-pie='{ 
+						"cut": 30,
+						"percent": 0,
+						"rotation": 144,
+						"colorSlice": "#AADEA7",
+						"colorCircle": "#f1f1f1",
+						"fontSize": "1.2rem",
+						"round": true,
+						"stroke": 5
+					}'
+					></div>
+				</div>
+				<div class="charts-wrapper">
+					<div class="heading">Carbon Monoxide</div>
+					<div
+						class="pie"
+						data-pie='{ 
+						"cut": 30,
+						"percent": 0,
+						"rotation": 144,
+						"colorSlice": "#AADEA7",
+						"colorCircle": "#f1f1f1",
+						"fontSize": "1.2rem",
+						"round": true,
+						"stroke": 5
+					}'
+					></div>
+				</div>
+			</div>
+		</div>
+
+		{% include 'dashboard.footer.html' %}
+	</body>
+
+	<!-- Graph Script -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.1/chartjs-plugin-zoom.min.js"></script>
+
+	<script src="{{url_for('static', filename='js/mk_graph.js')}}"></script>
+
+	<!-- Chart Script -->
+	<script src="https://cdn.jsdelivr.net/gh/tomik23/circular-progress-bar@1.1.9/dist/circularProgressBar.min.js"></script>
+
+	<script
+		type="text/javascript"
+		src="{{url_for('static', filename='js/mk_charts.js')}}"
+	></script>
+
+	<script
+		type="text/javascript"
+		src="{{url_for('static', filename='js/refresh_charts.js')}}"
+	></script>
+</html>

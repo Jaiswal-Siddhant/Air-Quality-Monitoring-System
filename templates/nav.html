@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}" />
+<script src="https://kit.fontawesome.com/a54195972e.js"></script>
+<script>
+	const redirect = () => {
+		window.location.href = '/';
+	};
+</script>
+
+{% set navigation_bar = [ ('/', 'home', 'Home'), ('/circuit', 'circuit',
+'Circuit') ] -%}
+
+<nav>
+	<input type="checkbox" id="check" />
+	<label for="check" class="checkbtn">
+		<i class="fas fa-bars"></i>
+	</label>
+	<label class="logo" onclick="redirect()">Dashboard</label>
+
+	<ul id="navigation">
+		{% for href, id, caption in navigation_bar %}
+		<li>
+			{% if active_page==id %}
+			<a class="active" href="{{ href|e }}" style="text-decoration: none"
+				>{{ caption|e }}</a
+			>
+			{% else %}
+			<a href="{{ href|e }}" style="text-decoration: none"
+				>{{ caption|e }}</a
+			>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+</nav>
+
+<!-- <nav>
+	<input type="checkbox" id="check" />
+	<label for="check" class="checkbtn">
+		<i class="fas fa-bars"></i>
+	</label>
+
+	<label class="logo">Dashboard</label>
+	<ul>
+		<li><a class="active" href="/">Home</a></li>
+		<li><a href="/info">Info</a></li>
+		<li><a href="/circuit">Circuit</a></li>
+	</ul>
+</nav> -->
