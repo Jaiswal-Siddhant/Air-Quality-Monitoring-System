@@ -2,11 +2,7 @@
   Code by Jaiswal Siddhant for IoT project
 
   This code reads Temperature, Humidity, Carbon Monoxide, Hydrogen and other Gases
-
-  Group Members: 
-    Vaivaswat Yeotikar   ,  Ayyan Shaikh    
-    Vyankatesh Tuppalwad ,  Nawaz Khan
-    
+ 
   Components: 
      MQ7, MQ8, MQ135, DHT11
 
